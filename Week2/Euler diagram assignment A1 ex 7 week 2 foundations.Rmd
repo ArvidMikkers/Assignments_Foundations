@@ -1,0 +1,38 @@
+---
+title: "Foundations of Computing: Assignment "
+subtitle: "Euler plot set theory"
+author: "Arvid Mikkers"
+output: html_notebook
+---
+
+
+
+
+```{r, warning = FALSE, message = FALSE}
+
+library(tidyverse)
+library(ggforce)
+```
+
+
+
+
+```{r}
+
+ggplot() +
+  geom_circle(aes(x0 = 0, y0= 0, r = 3), fill = "red", alpha = 0.2) +
+  geom_circle(aes(x0 = 1, y0= 0, r = 1), fill = "#4DB4D7", alpha = 1) +
+  geom_circle(aes(x0 = 6, y0= 0, r = 2), fill = "green", alpha = 0.2) +
+  geom_circle(aes(x0 = 4, y0= 0, r = 5), fill = "yellow", alpha = 0.2) +
+  annotate("text", x = -2 , y = 0, label = "F", size = 10) +
+  annotate("text", x = 1 , y = 0, label = "R", size = 10) +
+  annotate("text", x = 6 , y = 0, label = "K", size = 10) +
+  annotate("text", x = 4 , y = 3, label = "R", size = 10) +
+  coord_fixed() + 
+  theme_void()
+
+ggsave("Eulerdiagram.png")
+
+```
+
+
